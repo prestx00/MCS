@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    width: 1310px;
+    margin: 90px auto;
+}
+
+div {
+    display:block;
+}
+
+.caption {
+    color: white;
+    background-color: black;
+}
+
+.block-spacing {
+    margin-bottom: 53px;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.paragraph-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.link-text { 
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+a:link
+    {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: pink;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+}
