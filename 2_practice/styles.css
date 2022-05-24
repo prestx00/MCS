@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    height: 200px;
+    background-color: #e5e000;
+    display: flex;  
+    justify-content: center;   
+}
+
+.name-container {
+    width: 1440px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 80px;
+}
+
+.header-nickname {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-item {
+    width: 1440px;
+    height: 1080px;
+    background-image: url('images/driko.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.homework-container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: #e5e000;
+}
+
+.homework-links {
+    width: 1440px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 80px;
+}
+
+
+.projects-name {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.homework-links a{
+    margin: 0 8px;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+a:visited {
+    color: white;
+}
+
+a:visited:hover {
+    color: black;
+}
+
+.about-yourself-container {
+    height: 847px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.about-yourself-item {
+    width: 1440px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 80px;
+    margin-top: 110px;
+    flex-direction: column;
+}
+
+.about-yourself-caption {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 57px;
+    color: #000;
+    display: flex;
+    margin-bottom: 81px;
+
+}
+
+.about-yourself-text {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 58px;
+    margin-bottom: 81px;
+    display: flex;
+}
+
+.footer-container { 
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    background-color: #e5e000;
+    margin-top: 110px;
+}
+
+.footer-item {
+    width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 57px;
+    display: flex;
+    color: #ffffff;
+} 
