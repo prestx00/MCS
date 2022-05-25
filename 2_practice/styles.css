@@ -31,14 +31,11 @@
 .image-container {
     display: flex;
     justify-content: center;
-}
-
-.image-item {
-    width: 1440px;
     height: 1080px;
     background-image: url('images/driko.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .homework-container {
@@ -88,7 +85,6 @@ a:visited:hover {
 }
 
 .about-yourself-container {
-    height: 847px;
     display: flex;
     justify-content: center;
     background-color: #ffffff;
