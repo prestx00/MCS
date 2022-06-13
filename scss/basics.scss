@@ -1,0 +1,297 @@
+// header {
+//     h1, h2 {
+//         color: black;
+//     }
+//     h1 {
+//         font-size: 1.5rem;
+//     }
+//     h2 {
+//         font-size: 1.3rem;
+//     }
+
+//КОМБИНАТОРЫ
+//     & > {
+        
+//         time {
+//         color: #ccc;
+//     }
+//         span {
+//             font-size: 0.8rem;
+//         }
+//     }
+// }
+
+//РОДИТЕЛЬСКИЙ СЕЛЕКТОР
+
+// a {
+//     &:link {
+//         text-decoration: none;
+//     }
+//     &:hover {
+//         color: purple;
+//     }
+//     &:active {
+//         color: green;
+//     }
+//     &:visited {
+//         color: plum;
+//     }
+// }
+
+// .blog-post {
+//     padding: 2em 0;
+//     :not(&) {
+//         margin-top: 1em;
+//     }
+//     &-header {
+//         padding: 1em 0;
+
+//         &--collapsed {
+//             padding: 0;
+//         }
+//     }
+// }
+
+
+// ПЕРЕМЕННЫЕ
+
+// $border-width: 2px; //global variable
+
+// article {
+//     $color: black; //local variable
+//     border: $border-width solid $color;
+// }
+
+// section {
+//     border: $border-width solid #ccc;
+// }
+
+
+@use 'sass:list';
+@use 'sass:map';
+@use 'framework';
+//ТИПЫ ДАННЫХ
+
+//числа
+$width: 200.34px; 
+
+article {
+    min-width: $width;
+}
+
+
+//строки
+
+$font-family: 'Helvetica Neue'; 
+$file_name: 'background.png';
+article {
+    font-family: $font-family;
+    background-image: url("/images/#{$file_name}") //пример интерполяции переменной
+}
+
+//строки без кавычек
+$type: solid;
+$prefix: -ms;
+
+article {
+    border: 1px $type black;
+    #{$prefix}-flex: 1;
+}
+
+
+//Цвета
+$bg: rgba(255,144,230, 0.6);
+
+body {
+    background-color: $bg;
+}
+
+//списки
+
+$numbers: (12px, 40px, 50%, 1rem);
+$border: 1px solid black;
+section {
+    min-width: list.nth($border, 1);
+    border: $border;
+}
+
+//словари (maps) 
+$border_pairs: ('width': 1px, 'color': black, 'type': solid);
+footer {
+    border: map.get($border_pairs, 'width') map.get($border_pairs, 'type') map.get($border_pairs, 'non_existent');
+}
+
+//логические значения (булевы значения)
+
+$var1: true;
+$var2: false;
+
+//Null (значение отсутствует) 
+$no_value: null; //falsey value
+
+
+//ОПЕРАТОРЫ
+
+
+@debug 1px == 1px; //true
+@debug 1 == 1px; //false
+
+@debug 1px  != 1px; //false
+@debug "bold" == bold; //true
+
+@debug (1px solid) != (1px, solid); //true
+@debug (1px, solid) == (1px, solid); //true 
+
+@debug 1 > 2; //false
+@debug 1 <= 2; //true
+
+// +
+// -
+// *
+// /
+// %
+@debug 1px + 2px; // 3px
+@debug 12 / 4; // 3
+
+$width: 100px;
+$gap: 50px;
+$time: 1s; //секунды и пиксели нельзя складывать
+
+article {
+    min-width: $width + $gap;
+    font-family: "Helvetica" + "Neue";
+}
+
+//not
+//not true --> false
+
+//and
+//true and false --> false
+
+//or
+// true or false --> true
+
+
+//МИКСИНЫ
+
+@mixin no_margin(){
+    margin: 0;
+} //@ - это at --> at rules
+
+@mixin border($type, $color: black){
+    border: 1px $type $color;
+}
+
+@mixin link(){
+    &:hover {
+        text-decoration: none;
+        color: red;
+        @content;
+    }
+}
+
+a {
+    font-size: 0.9rem;
+    @include link() {
+        padding: 1px;
+    }
+}
+body {
+    @include no_margin();
+    @include border(solid);
+}
+
+article {
+    @include border(solid, green)
+}
+
+//МОДУЛИ через @use
+
+// body {
+//     color: s.$color;
+// }
+
+// footer {
+//     @include s.border();
+// }
+
+//Модули через @forward
+
+body {
+    color: framework.$color;
+}
+
+footer {
+    @include framework.border();
+    @include framework.paddings();
+}
+
+//Расширения
+
+.message {
+    background-color: powderblue;
+    border: 1px solid powderblue;
+}
+.generic {
+    font-family: 'Arial';
+}
+.message-important {
+    font-size: 1.5rem;
+    font-weight: bold;
+    @extend .message, .generic;
+}
+
+//Условия и циклы
+
+
+//if
+@mixin paddings($x_status: 'nullify') {
+    padding-left: 0;
+    padding-right: 0;
+    @if $x_status == 'nullify' { //if
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    @else if $x_status == 'single' {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    } @else {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+body {
+    @include paddings();
+}
+
+//for
+@mixin children(){
+    @for $i from 1 through 10 {
+        &:nth-child(2n + #{$i}) {
+            background-color: grey;
+        }
+    }
+}
+
+ul {
+    @include children();
+}
+
+//each
+
+$widths: 20px 50px 100px 150px;
+
+@each $width in $widths {
+    .element-#{$width} {
+        min-width: $width;
+    }
+}
+
+$messages: ("info": blue, "alert": red);
+
+@each $type, $color in $messages {
+    .message-#{$type} {
+        background-color: $color;
+    }
+}

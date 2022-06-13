@@ -1,0 +1,5 @@
+$color: black !default;
+$width: 1px !default;
+@mixin border {
+    border: $width solid $color;
+}

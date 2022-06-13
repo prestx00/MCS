@@ -1,0 +1,134 @@
+article {
+  min-width: 200.34px;
+}
+
+article {
+  font-family: "Helvetica Neue";
+  background-image: url("/images/background.png");
+}
+
+article {
+  border: 1px solid black;
+  -ms-flex: 1;
+}
+
+body {
+  background-color: rgba(255, 144, 230, 0.6);
+}
+
+section {
+  min-width: 1px;
+  border: 1px solid black;
+}
+
+footer {
+  border: 1px solid;
+}
+
+article {
+  min-width: 150px;
+  font-family: "HelveticaNeue";
+}
+
+a {
+  font-size: 0.9rem;
+}
+a:hover {
+  text-decoration: none;
+  color: red;
+  padding: 1px;
+}
+
+body {
+  margin: 0;
+  border: 1px solid black;
+}
+
+article {
+  border: 1px solid green;
+}
+
+body {
+  color: black;
+}
+
+footer {
+  border: 1px solid black;
+  padding: 0 25px;
+}
+
+.message, .message-important {
+  background-color: powderblue;
+  border: 1px solid powderblue;
+}
+
+.generic, .message-important {
+  font-family: "Arial";
+}
+
+.message-important {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ul:nth-child(2n+1) {
+  background-color: grey;
+}
+ul:nth-child(2n+2) {
+  background-color: grey;
+}
+ul:nth-child(2n+3) {
+  background-color: grey;
+}
+ul:nth-child(2n+4) {
+  background-color: grey;
+}
+ul:nth-child(2n+5) {
+  background-color: grey;
+}
+ul:nth-child(2n+6) {
+  background-color: grey;
+}
+ul:nth-child(2n+7) {
+  background-color: grey;
+}
+ul:nth-child(2n+8) {
+  background-color: grey;
+}
+ul:nth-child(2n+9) {
+  background-color: grey;
+}
+ul:nth-child(2n+10) {
+  background-color: grey;
+}
+
+.element-20px {
+  min-width: 20px;
+}
+
+.element-50px {
+  min-width: 50px;
+}
+
+.element-100px {
+  min-width: 100px;
+}
+
+.element-150px {
+  min-width: 150px;
+}
+
+.message-info {
+  background-color: blue;
+}
+
+.message-alert {
+  background-color: red;
+}
