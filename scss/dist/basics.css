@@ -9,7 +9,7 @@ article {
 
 article {
   border: 1px solid black;
-  -ms-flex: 1;
+  /* -ms-flex: 1; */
 }
 
 body {
