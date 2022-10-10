@@ -8,6 +8,7 @@ body {
     background-image: url('./images/home.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: black;
 }
 
 .main_container {
